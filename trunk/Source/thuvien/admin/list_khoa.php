@@ -119,7 +119,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listkhoa2">
+<div class="KT_tng" id="listkhoa2" align="center">
   <h1> Khoa
     <?php
   $nav_listkhoa2->Prepare();
@@ -193,7 +193,7 @@ $NXT_LIST_SETTINGS = {
                 </td>
                 <td><div class="KT_col_MaKhoa"><?php echo KT_FormatForList($row_rskhoa1['MaKhoa'], 20); ?></div></td>
                 <td><div class="KT_col_TenKhoa"><?php echo KT_FormatForList($row_rskhoa1['TenKhoa'], 200); ?></div></td>
-                <td><a class="KT_edit_link" href="admincp_form.php?mod=form_khoa&amp;MaKhoa=<?php echo $row_rskhoa1['MaKhoa']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
+                <td><a class="KT_edit_link" href="admincp1.php?mod=form_khoa&amp;MaKhoa=<?php echo $row_rskhoa1['MaKhoa']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
               </tr>
               <?php } while ($row_rskhoa1 = mysql_fetch_assoc($rskhoa1)); ?>
             <?php } // Show if recordset not empty ?>
@@ -218,12 +218,12 @@ $NXT_LIST_SETTINGS = {
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-        <a class="KT_additem_op_link" href="admincp_form.php?mod=form_khoa&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
+        <a class="KT_additem_op_link" href="admincp1.php?mod=form_khoa&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
     </form>
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
 <?php

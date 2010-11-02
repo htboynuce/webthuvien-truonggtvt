@@ -96,7 +96,7 @@ if (isset($_SESSION['sorter_tso_listthanhvien1'])) {
 }
 mysql_select_db($database_conn_project, $conn_project);
 
-$query_rsthanhvien1 = "SELECT lop.MaLop, lop.TenLop, khoa.MaKhoa, khoa.TenKhoa, phieumuon.MaPhieuMuon, chitietphieumuon.TinhTrang, thanhvien.TenThanhVien, thanhvien.MaThanhVien,thanhvien.GioiTinh, thanhvien.Username, thanhvien.Email, thanhvien.SoLanLogin, thanhvien.DisableDateUser, thanhvien.Active, count(chitietphieumuon.MaChiTietPhieuMuon)  AS count_MaChiTietPhieuMuon_1 FROM ((((chitietphieumuon LEFT JOIN phieumuon ON phieumuon.MaPhieuMuon=chitietphieumuon.MaPhieuMuon) LEFT JOIN thanhvien ON thanhvien.MaThanhVien=phieumuon.MaThanhVien) LEFT JOIN khoa ON khoa.MaKhoa=thanhvien.MaKhoa) LEFT JOIN lop ON lop.MaLop=thanhvien.MaLop) WHERE chitietphieumuon.TinhTrang=0 AND {$NXTFilter_rsthanhvien1}  GROUP BY lop.MaLop, lop.TenLop, khoa.MaKhoa, khoa.TenKhoa, phieumuon.MaPhieuMuon, chitietphieumuon.TinhTrang, thanhvien.TenThanhVien, thanhvien.GioiTinh, thanhvien.Username, thanhvien.Email, thanhvien.SoLanLogin, thanhvien.DisableDateUser, thanhvien.Active ORDER BY  {$NXTSort_rsthanhvien1} ";
+$query_rsthanhvien1 = "SELECT lop.MaLop, lop.TenLop, khoa.MaKhoa, khoa.TenKhoa, phieumuon.MaPhieuMuon, chitietphieumuon.TinhTrang, thanhvien.TenThanhVien, thanhvien.MaThanhVien,thanhvien.GioiTinh, thanhvien.Username, thanhvien.Email, thanhvien.SoLanLogin, thanhvien.DisableDateUser, thanhvien.Active, count(chitietphieumuon.MaChiTietPhieuMuon)  AS count_MaChiTietPhieuMuon_1 FROM ((((chitietphieumuon LEFT JOIN phieumuon ON phieumuon.MaPhieuMuon=chitietphieumuon.MaPhieuMuon) LEFT JOIN thanhvien ON thanhvien.MaThanhVien=phieumuon.MaThanhVien) LEFT JOIN khoa ON khoa.MaKhoa=thanhvien.MaKhoa) LEFT JOIN lop ON lop.MaLop=thanhvien.MaLop) WHERE chitietphieumuon.TinhTrang=0 AND {$NXTFilter_rsthanhvien1} GROUP BY lop.MaLop, lop.TenLop, khoa.MaKhoa, khoa.TenKhoa, phieumuon.MaPhieuMuon, chitietphieumuon.TinhTrang, thanhvien.TenThanhVien, thanhvien.GioiTinh, thanhvien.Username, thanhvien.Email, thanhvien.SoLanLogin, thanhvien.DisableDateUser, thanhvien.Active ORDER BY {$NXTSort_rsthanhvien1} ";
 $query_limit_rsthanhvien1 = sprintf("%s LIMIT %d, %d", $query_rsthanhvien1, $startRow_rsthanhvien1, $maxRows_rsthanhvien1);
 $rsthanhvien1 = mysql_query($query_limit_rsthanhvien1, $conn_project) or die(mysql_error());
 $row_rsthanhvien1 = mysql_fetch_assoc($rsthanhvien1);
@@ -125,7 +125,7 @@ $NXT_LIST_SETTINGS = {
 }
 </script><style type="text/css">
   /* Dynamic List row settings */
-  .KT_col_MaThanhVien {width:120px; overflow:hidden;}
+  .KT_col_MaThanhVien {width:100px; overflow:hidden;}
   .KT_col_TenThanhVien {width:140px; overflow:hidden;}
   .KT_col_TongSoSachMuon {width:40px; overflow:hidden;}
   .KT_col_Username {width:100px; overflow:hidden;}
@@ -135,7 +135,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listthanhvien1">
+<div class="KT_tng" id="listthanhvien1" align="center">
   <h1> Thành Viên
     <?php
   $nav_listthanhvien1->Prepare();
@@ -218,10 +218,10 @@ $NXT_LIST_SETTINGS = {
             <td><div class="KT_col_MaThanhVien"><?php echo KT_FormatForList($row_rsthanhvien1['MaThanhVien'], 20); ?></div></td>
             <td><div class="KT_col_TenThanhVien"><?php echo KT_FormatForList($row_rsthanhvien1['TenThanhVien'], 200); ?></div></td>
             <td><div class="KT_col_TenThanhVien"><?php echo KT_FormatForList($row_rsthanhvien1['count_MaChiTietPhieuMuon_1'], 20); ?></div></td>
-            <td><div class="KT_col_Username"><?php echo KT_FormatForList($row_rsthanhvien1['Username'], 20); ?></div></td>
+            <td><div class="KT_col_Username"><?php echo KT_FormatForList($row_rsthanhvien1['Username'], 200); ?></div></td>
             <td><div class="KT_col_NgayLapThe"><?php echo KT_formatDate($row_rsthanhvien1['NgayLapThe']); ?></div></td>
-            <td><div class="KT_col_Email"><?php echo KT_FormatForList($row_rsthanhvien1['Email'], 20); ?></div></td>
-            <td><a class="KT_edit_link" href="admincp_form.php?mod=form_thanhvien&amp;MaThanhVien=<?php echo $row_rsthanhvien1['MaThanhVien']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
+            <td><div class="KT_col_Email"><?php echo KT_FormatForList($row_rsthanhvien1['Email'], 200); ?></div></td>
+            <td><a class="KT_edit_link" href="admincp1.php?mod=form_thanhvien&amp;MaThanhVien=<?php echo $row_rsthanhvien1['MaThanhVien']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
           </tr>
           <?php } while ($row_rsthanhvien1 = mysql_fetch_assoc($rsthanhvien1)); ?>
           <?php } // Show if recordset not empty ?>
@@ -246,12 +246,12 @@ $NXT_LIST_SETTINGS = {
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-        <a class="KT_additem_op_link" href="admincp_form.php?mod=form_thanhvien&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
+        <a class="KT_additem_op_link" href="admincp1.php?mod=form_thanhvien&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
     </form>
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 
 </body>
 </html>

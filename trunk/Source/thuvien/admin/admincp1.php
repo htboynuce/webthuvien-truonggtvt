@@ -21,6 +21,25 @@ $mxiObj->IncludeStatic("list_khoa", "list_khoa.php", "", "", "");
 $mxiObj->IncludeStatic("list_lop", "list_lop.php", "", "", "");
 $mxiObj->IncludeStatic("list_cuonsach", "list_cuonsach.php", "", "", "");
 $mxiObj->IncludeStatic("list_lienhewebsite", "list_lienhewebsite.php", "", "", "");
+$mxiObj->IncludeStatic("form_thanhvien", "form_thanhvien.php", "", "", "");
+$mxiObj->IncludeStatic("form_vitri", "form_vitri.php", "", "", "");
+$mxiObj->IncludeStatic("form_chitietphieumuon", "form_chitietphieumuon.php", "", "", "");
+$mxiObj->IncludeStatic("form_cuonsach", "form_cuonsach.php", "", "", "");
+$mxiObj->IncludeStatic("form_khoa", "form_khoa.php", "", "", "");
+$mxiObj->IncludeStatic("form_lienhewebsite", "form_lienhewebsite.php", "", "", "");
+$mxiObj->IncludeStatic("form_linhvuc", "form_linhvuc.php", "", "", "");
+$mxiObj->IncludeStatic("form_lop", "form_lop.php", "", "", "");
+$mxiObj->IncludeStatic("form_ngonngusach", "form_ngonngusach.php", "", "", "");
+$mxiObj->IncludeStatic("form_nhaxuatban", "form_nhaxuatban.php", "", "", "");
+$mxiObj->IncludeStatic("form_nhomsach", "form_nhomsach.php", "", "", "");
+$mxiObj->IncludeStatic("form_phanloaisach", "form_phanloaisach.php", "", "", "");
+$mxiObj->IncludeStatic("form_phieumuon", "form_phieumuon.php", "", "", "");
+$mxiObj->IncludeStatic("form_quequan", "form_quequan.php", "", "", "");
+$mxiObj->IncludeStatic("form_sach", "form_sach.php", "", "", "");
+$mxiObj->IncludeStatic("form_tacgia", "form_tacgia.php", "", "", "");
+$mxiObj->IncludeStatic("form_thongke", "form_thongke.php", "", "", "");
+$mxiObj->IncludeStatic("form_thongkedocgia", "form_thongkedocgia.php", "", "", "");
+$mxiObj->IncludeStatic("", "", "", "", "");
 // End Include Multiple Static Pages
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -48,7 +67,6 @@ $mxiObj->IncludeStatic("list_lienhewebsite", "list_lienhewebsite.php", "", "", "
   require(basename("admin_menu1.php"));
   mxi_includes_end();
 ?>
-   menu 
   </div>
   <div id="content">
     <?php
@@ -58,6 +76,12 @@ $mxiObj->IncludeStatic("list_lienhewebsite", "list_lienhewebsite.php", "", "", "
     require(basename($incFileName)); // require the page content
     mxi_includes_end();
 }
+
+
+
+
+
+
 
 
 

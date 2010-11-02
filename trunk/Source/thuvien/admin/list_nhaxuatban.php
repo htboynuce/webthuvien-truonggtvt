@@ -119,7 +119,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listnhaxuatban1">
+<div class="KT_tng" id="listnhaxuatban1" align="center">
   <h1> Nhà Xuất Bản
     <?php
   $nav_listnhaxuatban1->Prepare();
@@ -161,8 +161,8 @@ $NXT_LIST_SETTINGS = {
           <tr class="KT_row_order">
             <th> <input type="checkbox" name="KT_selAll" id="KT_selAll"/>
             </th>
-            <th id="MaNhaXuatBan" class="KT_sorter KT_col_MaNhaXuatBan <?php echo $tso_listnhaxuatban1->getSortIcon('nhaxuatban.MaNhaXuatBan'); ?>"> <a href="<?php echo $tso_listnhaxuatban1->getSortLink('nhaxuatban.MaNhaXuatBan'); ?>">MaNhaXuatBan</a> </th>
-            <th id="TenNhaXuatBan" class="KT_sorter KT_col_TenNhaXuatBan <?php echo $tso_listnhaxuatban1->getSortIcon('nhaxuatban.TenNhaXuatBan'); ?>"> <a href="<?php echo $tso_listnhaxuatban1->getSortLink('nhaxuatban.TenNhaXuatBan'); ?>">TenNhaXuatBan</a> </th>
+            <th id="MaNhaXuatBan" class="KT_sorter KT_col_MaNhaXuatBan <?php echo $tso_listnhaxuatban1->getSortIcon('nhaxuatban.MaNhaXuatBan'); ?>"> <a href="<?php echo $tso_listnhaxuatban1->getSortLink('nhaxuatban.MaNhaXuatBan'); ?>">Mã số</a> </th>
+            <th id="TenNhaXuatBan" class="KT_sorter KT_col_TenNhaXuatBan <?php echo $tso_listnhaxuatban1->getSortIcon('nhaxuatban.TenNhaXuatBan'); ?>"> <a href="<?php echo $tso_listnhaxuatban1->getSortLink('nhaxuatban.TenNhaXuatBan'); ?>">Tên nhà xuất bản</a> </th>
             <th>&nbsp;</th>
           </tr>
           <?php 
@@ -193,7 +193,7 @@ $NXT_LIST_SETTINGS = {
                 </td>
                 <td><div class="KT_col_MaNhaXuatBan"><?php echo KT_FormatForList($row_rsnhaxuatban1['MaNhaXuatBan'], 20); ?></div></td>
                 <td><div class="KT_col_TenNhaXuatBan"><?php echo KT_FormatForList($row_rsnhaxuatban1['TenNhaXuatBan'], 200); ?></div></td>
-                <td><a class="KT_edit_link" href="admincp_form.php?mod=form_nhaxuatban&amp;MaNhaXuatBan=<?php echo $row_rsnhaxuatban1['MaNhaXuatBan']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
+                <td><a class="KT_edit_link" href="admincp1.php?mod=form_nhaxuatban&amp;MaNhaXuatBan=<?php echo $row_rsnhaxuatban1['MaNhaXuatBan']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
               </tr>
               <?php } while ($row_rsnhaxuatban1 = mysql_fetch_assoc($rsnhaxuatban1)); ?>
             <?php } // Show if recordset not empty ?>
@@ -218,12 +218,12 @@ $NXT_LIST_SETTINGS = {
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-        <a class="KT_additem_op_link" href="admincp_form.php?mod=form_nhaxuatban&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
+        <a class="KT_additem_op_link" href="admincp1.php?mod=form_nhaxuatban&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
     </form>
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
 <?php

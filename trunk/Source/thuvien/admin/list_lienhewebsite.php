@@ -125,7 +125,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listlienhewebsite1">
+<div class="KT_tng" id="listlienhewebsite1" align="center">
   <h1> Liên hệ website
     <?php
   $nav_listlienhewebsite1->Prepare();
@@ -217,7 +217,7 @@ if (@$row_rslienhewebsite1['Visible'] == 1) {
                     <?php } 
 // endif Conditional region4
 ?></div></td>
-                <td><a class="KT_edit_link" href="admincp_form.php?mod=form_lienhewebsite&amp;MaLienhe=<?php echo $row_rslienhewebsite1['MaLienhe']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
+                <td><a class="KT_edit_link" href="admincp1.php?mod=form_lienhewebsite&amp;MaLienhe=<?php echo $row_rslienhewebsite1['MaLienhe']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
               </tr>
               <?php } while ($row_rslienhewebsite1 = mysql_fetch_assoc($rslienhewebsite1)); ?>
             <?php } // Show if recordset not empty ?>
@@ -242,12 +242,12 @@ if (@$row_rslienhewebsite1['Visible'] == 1) {
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-        <a class="KT_additem_op_link" href="admincp_form.php?mod=form_lienhewebsite&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
+        <a class="KT_additem_op_link" href="admincp1.php?mod=form_lienhewebsite&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
     </form>
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
 <?php

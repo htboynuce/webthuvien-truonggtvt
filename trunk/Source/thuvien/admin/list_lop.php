@@ -121,7 +121,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listlop1">
+<div class="KT_tng" id="listlop1" align="center">
   <h1> Lớp
     <?php
   $nav_listlop1->Prepare();
@@ -213,7 +213,7 @@ do {
             <td><div class="KT_col_MaLop"><?php echo KT_FormatForList($row_rslop1['MaLop'], 20); ?></div></td>
             <td><div class="KT_col_TenLop"><?php echo KT_FormatForList($row_rslop1['TenLop'], 200); ?></div></td>
             <td><div class="KT_col_MaKhoa"><?php echo KT_FormatForList($row_rslop1['MaKhoa'], 20); ?></div></td>
-            <td><a class="KT_edit_link" href="admincp_form.php?mod=form_lop&amp;MaLop=<?php echo $row_rslop1['MaLop']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
+            <td><a class="KT_edit_link" href="admincp1.php?mod=form_lop&amp;MaLop=<?php echo $row_rslop1['MaLop']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
           </tr>
           <?php } while ($row_rslop1 = mysql_fetch_assoc($rslop1)); ?>
           <?php } // Show if recordset not empty ?>
@@ -238,12 +238,12 @@ do {
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-        <a class="KT_additem_op_link" href="admincp_form.php?mod=form_lop&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
+        <a class="KT_additem_op_link" href="admincp1.php?mod=form_lop&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
     </form>
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 
 </body>
 </html>

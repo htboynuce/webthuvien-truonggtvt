@@ -125,7 +125,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listlinhvuc2">
+<div class="KT_tng" id="listlinhvuc2" align="center">
   <h1> Lĩnh Vực
     <?php
   $nav_listlinhvuc2->Prepare();
@@ -229,7 +229,7 @@ if (@$row_rslinhvuc1['HienMenu'] == 1) {
                     <?php } 
 // endif Conditional region4
 ?></div></td>
-                <td><a class="KT_edit_link" href="admincp_form.php?mod=form_linhvuc&amp;MaLinhVuc=<?php echo $row_rslinhvuc1['MaLinhVuc']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
+                <td><a class="KT_edit_link" href="admincp1.php?mod=form_linhvuc&amp;MaLinhVuc=<?php echo $row_rslinhvuc1['MaLinhVuc']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
               </tr>
               <?php } while ($row_rslinhvuc1 = mysql_fetch_assoc($rslinhvuc1)); ?>
             <?php } // Show if recordset not empty ?>
@@ -254,12 +254,12 @@ if (@$row_rslinhvuc1['HienMenu'] == 1) {
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-        <a class="KT_additem_op_link" href="admincp_form.php?mod=form_linhvuc&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
+        <a class="KT_additem_op_link" href="admincp1.php?mod=form_linhvuc&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
     </form>
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
 <?php

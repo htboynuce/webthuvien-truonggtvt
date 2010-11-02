@@ -83,7 +83,7 @@ $tNGs->addTransaction($ins_phieumuon);
 // Register triggers
 $ins_phieumuon->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_phieumuon->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_phieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_phieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_phieumuon");
 $ins_phieumuon->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $ins_phieumuon->setTable("phieumuon");
@@ -99,7 +99,7 @@ $tNGs->addTransaction($upd_phieumuon);
 // Register triggers
 $upd_phieumuon->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_phieumuon->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_phieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_phieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_phieumuon");
 $upd_phieumuon->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $upd_phieumuon->setTable("phieumuon");
@@ -114,7 +114,7 @@ $del_phieumuon = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_phieumuon);
 // Register triggers
 $del_phieumuon->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_phieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_phieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_phieumuon");
 // Add columns
 $del_phieumuon->setTable("phieumuon");
 $del_phieumuon->setPrimaryKey("MaPhieuMuon", "NUMERIC_TYPE", "GET", "MaPhieuMuon");
@@ -156,7 +156,7 @@ $NXT_FORM_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -246,7 +246,7 @@ do {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 <?php
 	echo $tNGs->getErrorMsg();
 ?></body>

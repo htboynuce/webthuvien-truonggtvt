@@ -38,7 +38,7 @@ $tNGs->addTransaction($ins_quequan);
 // Register triggers
 $ins_quequan->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_quequan->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_quequan->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_quequan->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_quequan");
 $ins_quequan->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $ins_quequan->setTable("quequan");
@@ -51,7 +51,7 @@ $tNGs->addTransaction($upd_quequan);
 // Register triggers
 $upd_quequan->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_quequan->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_quequan->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_quequan->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_quequan");
 $upd_quequan->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $upd_quequan->setTable("quequan");
@@ -63,7 +63,7 @@ $del_quequan = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_quequan);
 // Register triggers
 $del_quequan->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_quequan->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_quequan->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_quequan");
 // Add columns
 $del_quequan->setTable("quequan");
 $del_quequan->setPrimaryKey("ID_quequan", "NUMERIC_TYPE", "GET", "ID_quequan");
@@ -100,7 +100,7 @@ $NXT_FORM_SETTINGS = {
 <?php
 	echo $tNGs->getErrorMsg();
 ?>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -162,6 +162,6 @@ if (@$totalRows_rsquequan > 1) {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
