@@ -38,7 +38,7 @@ $tNGs->addTransaction($ins_tacgia);
 // Register triggers
 $ins_tacgia->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_tacgia->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_tacgia->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_tacgia->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_tacgia");
 $ins_tacgia->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $ins_tacgia->setTable("tacgia");
@@ -51,7 +51,7 @@ $tNGs->addTransaction($upd_tacgia);
 // Register triggers
 $upd_tacgia->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_tacgia->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_tacgia->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_tacgia->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_tacgia");
 $upd_tacgia->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $upd_tacgia->setTable("tacgia");
@@ -63,7 +63,7 @@ $del_tacgia = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_tacgia);
 // Register triggers
 $del_tacgia->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_tacgia->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_tacgia->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_tacgia");
 // Add columns
 $del_tacgia->setTable("tacgia");
 $del_tacgia->setPrimaryKey("MaTacGia", "NUMERIC_TYPE", "GET", "MaTacGia");
@@ -100,7 +100,7 @@ $NXT_FORM_SETTINGS = {
 <?php
 	echo $tNGs->getErrorMsg();
 ?>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -162,6 +162,6 @@ if (@$totalRows_rstacgia > 1) {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>

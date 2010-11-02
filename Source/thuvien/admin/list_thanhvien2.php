@@ -135,8 +135,8 @@ $NXT_LIST_SETTINGS = {
 }
 </script><style type="text/css">
   /* Dynamic List row settings */
-  .KT_col_MaThanhVien {width:140px; overflow:hidden;}
-  .KT_col_TenThanhVien {width:140px; overflow:hidden;}
+  .KT_col_MaThanhVien {width:60px; overflow:hidden;}
+  .KT_col_TenThanhVien {width:150px; overflow:hidden;}
   .KT_col_TongSoSachMuon {width:140px; overflow:hidden;}
   .KT_col_Username {width:140px; overflow:hidden;}
   .KT_col_MaLop {width:140px; overflow:hidden;}
@@ -145,14 +145,14 @@ $NXT_LIST_SETTINGS = {
   .KT_col_Email {width:140px; overflow:hidden;}
   .KT_col_SoLanLogin {width:140px; overflow:hidden;}
   .KT_col_DisableDateUser {width:140px; overflow:hidden;}
-  .KT_col_Active {width:140px; overflow:hidden;}
+  .KT_col_Active {width:70px; overflow:hidden;}
 </style>
 
 </head>
 
 <body>
-<div class="KT_tng" id="listthanhvien1">
-  <h1> Thanhvien
+<div class="KT_tng" id="listthanhvien1" align="center">
+  <h1> Danh sách thành viên
     <?php
   $nav_listthanhvien1->Prepare();
   require("../includes/nav/NAV_Text_Statistics.inc.php");
@@ -193,7 +193,7 @@ $NXT_LIST_SETTINGS = {
           <tr class="KT_row_order">
             <th> <input type="checkbox" name="KT_selAll" id="KT_selAll"/>
             </th>
-            <th id="MaThanhVien" class="KT_sorter KT_col_MaThanhVien <?php echo $tso_listthanhvien1->getSortIcon('thanhvien.MaThanhVien'); ?>"> <a href="<?php echo $tso_listthanhvien1->getSortLink('thanhvien.MaThanhVien'); ?>">Mã Thành Viên</a> </th>
+            <th id="MaThanhVien" class="KT_sorter KT_col_MaThanhVien <?php echo $tso_listthanhvien1->getSortIcon('thanhvien.MaThanhVien'); ?>"> <a href="<?php echo $tso_listthanhvien1->getSortLink('thanhvien.MaThanhVien'); ?>">Mã số</a> </th>
             <th id="TenThanhVien" class="KT_sorter KT_col_TenThanhVien <?php echo $tso_listthanhvien1->getSortIcon('thanhvien.TenThanhVien'); ?>"> <a href="<?php echo $tso_listthanhvien1->getSortLink('thanhvien.TenThanhVien'); ?>">Tên Thành Viên</a> </th>
             <th id="TongSoSachMuon" class="KT_sorter KT_col_TongSoSachMuon <?php echo $tso_listthanhvien1->getSortIcon('thanhvien.TongSoSachMuon'); ?>"> <a href="<?php echo $tso_listthanhvien1->getSortLink('thanhvien.TongSoSachMuon'); ?>">Tổng Số Sách Đang Mượn </a> </th>
             <th id="Username" class="KT_sorter KT_col_Username <?php echo $tso_listthanhvien1->getSortIcon('thanhvien.Username'); ?>"> <a href="<?php echo $tso_listthanhvien1->getSortLink('thanhvien.Username'); ?>">Số CMND</a> </th>
@@ -203,7 +203,7 @@ $NXT_LIST_SETTINGS = {
             <th id="Email" class="KT_sorter KT_col_Email <?php echo $tso_listthanhvien1->getSortIcon('thanhvien.Email'); ?>"> <a href="<?php echo $tso_listthanhvien1->getSortLink('thanhvien.Email'); ?>">Email</a> </th>
             <th id="SoLanLogin" class="KT_sorter KT_col_SoLanLogin <?php echo $tso_listthanhvien1->getSortIcon('thanhvien.SoLanLogin'); ?>"> <a href="<?php echo $tso_listthanhvien1->getSortLink('thanhvien.SoLanLogin'); ?>">Số lần login</a> </th>
             <th id="DisableDateUser" class="KT_sorter KT_col_DisableDateUser <?php echo $tso_listthanhvien1->getSortIcon('thanhvien.DisableDateUser'); ?>"> <a href="<?php echo $tso_listthanhvien1->getSortLink('thanhvien.DisableDateUser'); ?>">DisableDateUser</a> </th>
-            <th id="Active" class="KT_sorter KT_col_Active <?php echo $tso_listthanhvien1->getSortIcon('thanhvien.Active'); ?>"> <a href="<?php echo $tso_listthanhvien1->getSortLink('thanhvien.Active'); ?>">Active</a> </th>
+            <th id="Active" class="KT_sorter KT_col_Active <?php echo $tso_listthanhvien1->getSortIcon('thanhvien.Active'); ?>"> <a href="<?php echo $tso_listthanhvien1->getSortLink('thanhvien.Active'); ?>">Kích hoạt</a> </th>
             <th>&nbsp;</th>
           </tr>
           <?php 
@@ -272,13 +272,13 @@ do {
                 <input type="hidden" name="MaThanhVien" class="id_field" value="<?php echo $row_rsthanhvien1['MaThanhVien']; ?>" />
             </td>
             <td><div class="KT_col_MaThanhVien"><?php echo KT_FormatForList($row_rsthanhvien1['MaThanhVien'], 20); ?></div></td>
-            <td><div class="KT_col_TenThanhVien"><?php echo KT_FormatForList($row_rsthanhvien1['TenThanhVien'], 20); ?></div></td>
+            <td><div class="KT_col_TenThanhVien"><?php echo KT_FormatForList($row_rsthanhvien1['TenThanhVien'], 200); ?></div></td>
             <td><div class="KT_col_TenThanhVien"><?php echo KT_FormatForList($row_rsthanhvien1['count_MaChiTietPhieuMuon_1'], 20); ?></div></td>
-            <td><div class="KT_col_Username"><?php echo KT_FormatForList($row_rsthanhvien1['Username'], 20); ?></div></td>
-            <td><div class="KT_col_MaLop"><?php echo KT_FormatForList($row_rsthanhvien1['MaLop'], 20); ?></div></td>
-            <td><div class="KT_col_MaKhoa"><?php echo KT_FormatForList($row_rsthanhvien1['MaKhoa'], 20); ?></div></td>
+            <td><div class="KT_col_Username"><?php echo KT_FormatForList($row_rsthanhvien1['Username'], 200); ?></div></td>
+            <td><div class="KT_col_MaLop"><?php echo KT_FormatForList($row_rsthanhvien1['MaLop'], 200); ?></div></td>
+            <td><div class="KT_col_MaKhoa"><?php echo KT_FormatForList($row_rsthanhvien1['MaKhoa'], 200); ?></div></td>
             <td><div class="KT_col_NgayLapThe"><?php echo KT_formatDate($row_rsthanhvien1['NgayLapThe']); ?></div></td>
-            <td><div class="KT_col_Email"><?php echo KT_FormatForList($row_rsthanhvien1['Email'], 20); ?></div></td>
+            <td><div class="KT_col_Email"><?php echo KT_FormatForList($row_rsthanhvien1['Email'], 200); ?></div></td>
             <td><div class="KT_col_SoLanLogin"><?php echo KT_FormatForList($row_rsthanhvien1['SoLanLogin'], 20); ?></div></td>
             <td><div class="KT_col_DisableDateUser"><?php echo KT_formatDate($row_rsthanhvien1['DisableDateUser']); ?></div></td>
             <td><div class="KT_col_Active"><?php echo KT_FormatForList($row_rsthanhvien1['Active'], 20); ?></div></td>
@@ -309,7 +309,7 @@ do {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 
 </body>
 </html>

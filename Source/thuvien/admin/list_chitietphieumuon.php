@@ -177,7 +177,7 @@ echo $jsObject_Recordset3->getOutput();
 </head>
 
 <body>
-<div class="KT_tng" id="listchitietphieumuon1">
+<div class="KT_tng" id="listchitietphieumuon1" align="center">
   <h1> Chi Tiết Phiếu Mượn
     <?php
   $nav_listchitietphieumuon1->Prepare();
@@ -281,9 +281,9 @@ do {
                 <input type="hidden" name="MaChiTietPhieuMuon" class="id_field" value="<?php echo $row_rschitietphieumuon1['MaChiTietPhieuMuon']; ?>" />            </td>
             <td><div class="KT_col_MaChiTietPhieuMuon"><?php echo KT_FormatForList($row_rschitietphieumuon1['MaChiTietPhieuMuon'], 20); ?></div></td>
             <td><div class="KT_col_MaCuonSach"><?php echo KT_FormatForList($row_rschitietphieumuon1['MaCuonSach'], 20); ?></div></td><td><div class="KT_col_MaSach"><?php echo KT_FormatForList($row_rschitietphieumuon1['MaSach'], 200); ?></div></td>
-            <td><div class="KT_col_NgayMuon"><?php echo KT_formatDate($row_rschitietphieumuon1['NgayMuon']); ?></div></td>
-            <td><div class="KT_col_NgayHetHan"><?php echo KT_formatDate($row_rschitietphieumuon1['NgayHetHan']); ?></div></td>
-            <td><div class="KT_col_NgayTra"><?php echo KT_formatDate($row_rschitietphieumuon1['NgayTra']); ?></div></td>
+            <td><div class="KT_col_NgayMuon"><?php echo date('d/m/Y',strtotime($row_rschitietphieumuon1['NgayMuon'])); ?></div></td>
+            <td><div class="KT_col_NgayHetHan"><?php echo date('d/m/Y',strtotime($row_rschitietphieumuon1['NgayHetHan'])); ?></div></td>
+            <td><div class="KT_col_NgayTra"><?php echo date('d/m/Y',strtotime($row_rschitietphieumuon1['NgayTra'])); ?></div></td>
             
             <td><div align="center">
               <?php 
@@ -298,7 +298,7 @@ if (@$row_rschitietphieumuon1['TinhTrang'] == 1) {
                 <?php } 
 // endif Conditional region5
 ?></div></td>
-            <td><a class="KT_edit_link" href="admincp_form.php?<?php echo isset($_GET['NxT_MaPhieuMuon']) ? "NxT_MaPhieuMuon=".$_GET['NxT_MaPhieuMuon'] : ""; ?>&amp;mod=form_chitietphieumuon&amp;MaChiTietPhieuMuon=<?php echo $row_rschitietphieumuon1['MaChiTietPhieuMuon']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
+            <td><a class="KT_edit_link" href="admincp1.php?<?php echo isset($_GET['NxT_MaPhieuMuon']) ? "NxT_MaPhieuMuon=".$_GET['NxT_MaPhieuMuon'] : ""; ?>&amp;mod=form_chitietphieumuon&amp;MaChiTietPhieuMuon=<?php echo $row_rschitietphieumuon1['MaChiTietPhieuMuon']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
           </tr>
           <?php } while ($row_rschitietphieumuon1 = mysql_fetch_assoc($rschitietphieumuon1)); ?>
           <?php } // Show if recordset not empty ?>
@@ -323,12 +323,12 @@ if (@$row_rschitietphieumuon1['TinhTrang'] == 1) {
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-        <a class="KT_additem_op_link" href="admincp_form.php?<?php echo isset($_GET['NxT_MaPhieuMuon']) ? "NxT_MaPhieuMuon=".$_GET['NxT_MaPhieuMuon'] : ""; ?>&amp;mod=form_chitietphieumuon&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
+        <a class="KT_additem_op_link" href="admincp1.php?<?php echo isset($_GET['NxT_MaPhieuMuon']) ? "NxT_MaPhieuMuon=".$_GET['NxT_MaPhieuMuon'] : ""; ?>&amp;mod=form_chitietphieumuon&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
     </form>
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 
 </body>
 </html>

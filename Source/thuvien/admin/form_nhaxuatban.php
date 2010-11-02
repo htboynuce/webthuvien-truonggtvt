@@ -38,7 +38,7 @@ $tNGs->addTransaction($ins_nhaxuatban);
 // Register triggers
 $ins_nhaxuatban->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_nhaxuatban->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_nhaxuatban->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_nhaxuatban->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_nhaxuatban");
 $ins_nhaxuatban->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $ins_nhaxuatban->setTable("nhaxuatban");
@@ -51,7 +51,7 @@ $tNGs->addTransaction($upd_nhaxuatban);
 // Register triggers
 $upd_nhaxuatban->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_nhaxuatban->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_nhaxuatban->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_nhaxuatban->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_nhaxuatban");
 $upd_nhaxuatban->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $upd_nhaxuatban->setTable("nhaxuatban");
@@ -63,7 +63,7 @@ $del_nhaxuatban = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_nhaxuatban);
 // Register triggers
 $del_nhaxuatban->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_nhaxuatban->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_nhaxuatban->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_nhaxuatban");
 // Add columns
 $del_nhaxuatban->setTable("nhaxuatban");
 $del_nhaxuatban->setPrimaryKey("MaNhaXuatBan", "NUMERIC_TYPE", "GET", "MaNhaXuatBan");
@@ -100,7 +100,7 @@ $NXT_FORM_SETTINGS = {
 <?php
 	echo $tNGs->getErrorMsg();
 ?>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -162,6 +162,6 @@ if (@$totalRows_rsnhaxuatban > 1) {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>

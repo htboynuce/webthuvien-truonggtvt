@@ -38,7 +38,7 @@ $tNGs->addTransaction($ins_vitri);
 // Register triggers
 $ins_vitri->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_vitri->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_vitri->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_vitri->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_vitri");
 $ins_vitri->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $ins_vitri->setTable("vitri");
@@ -54,7 +54,7 @@ $tNGs->addTransaction($upd_vitri);
 // Register triggers
 $upd_vitri->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_vitri->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_vitri->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_vitri->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_vitri");
 $upd_vitri->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $upd_vitri->setTable("vitri");
@@ -69,7 +69,7 @@ $del_vitri = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_vitri);
 // Register triggers
 $del_vitri->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_vitri->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_vitri->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_vitri");
 // Add columns
 $del_vitri->setTable("vitri");
 $del_vitri->setPrimaryKey("MaViTri", "NUMERIC_TYPE", "GET", "MaViTri");
@@ -103,7 +103,7 @@ $NXT_FORM_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -180,6 +180,6 @@ if (@$totalRows_rsvitri > 1) {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>

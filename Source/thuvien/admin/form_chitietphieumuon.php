@@ -104,7 +104,7 @@ $tNGs->addTransaction($ins_chitietphieumuon);
 // Register triggers
 $ins_chitietphieumuon->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_chitietphieumuon->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_chitietphieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_chitietphieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_chitietphieumuon");
 // Add columns
 $ins_chitietphieumuon->setTable("chitietphieumuon");
 $ins_chitietphieumuon->addColumn("MaPhieuMuon", "NUMERIC_TYPE", "GET", "NxT_MaPhieuMuon");
@@ -126,7 +126,7 @@ $tNGs->addTransaction($upd_chitietphieumuon);
 // Register triggers
 $upd_chitietphieumuon->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_chitietphieumuon->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_chitietphieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_chitietphieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_chitietphieumuon");
 // Add columns
 $upd_chitietphieumuon->setTable("chitietphieumuon");
 $upd_chitietphieumuon->addColumn("MaLinhVuc", "NUMERIC_TYPE", "POST", "MaLinhVuc");
@@ -146,7 +146,7 @@ $del_chitietphieumuon = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_chitietphieumuon);
 // Register triggers
 $del_chitietphieumuon->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_chitietphieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_chitietphieumuon->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_chitietphieumuon");
 // Add columns
 $del_chitietphieumuon->setTable("chitietphieumuon");
 $del_chitietphieumuon->setPrimaryKey("MaChiTietPhieuMuon", "NUMERIC_TYPE", "GET", "MaChiTietPhieuMuon");
@@ -208,7 +208,7 @@ echo $jsObject_rs_cuonsach->getOutput();
 </head>
 
 <body>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -354,8 +354,10 @@ do {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
-</body>
+
+<?php
+	echo $tNGs->getErrorMsg();
+?></body>
 </html>
 <?php
 mysql_free_result($rs_phieumuon);

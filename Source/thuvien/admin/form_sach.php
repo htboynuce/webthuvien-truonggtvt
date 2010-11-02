@@ -96,7 +96,7 @@ $tNGs->addTransaction($ins_sach);
 // Register triggers
 $ins_sach->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_sach->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_sach->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_sach->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_sach");
 // Add columns
 $ins_sach->setTable("sach");
 $ins_sach->addColumn("TenSach", "STRING_TYPE", "POST", "TenSach");
@@ -123,7 +123,7 @@ $tNGs->addTransaction($upd_sach);
 // Register triggers
 $upd_sach->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_sach->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_sach->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_sach->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_sach");
 // Add columns
 $upd_sach->setTable("sach");
 $upd_sach->addColumn("TenSach", "STRING_TYPE", "POST", "TenSach");
@@ -149,7 +149,7 @@ $del_sach = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_sach);
 // Register triggers
 $del_sach->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_sach->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_sach->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_sach");
 // Add columns
 $del_sach->setTable("sach");
 $del_sach->setPrimaryKey("MasSach", "NUMERIC_TYPE", "GET", "MasSach");
@@ -194,7 +194,7 @@ echo $jsObject_rs_nhomsach->getOutput();
 </head>
 
 <body>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -388,7 +388,7 @@ do {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 <?php
 	echo $tNGs->getErrorMsg();
 ?></body>

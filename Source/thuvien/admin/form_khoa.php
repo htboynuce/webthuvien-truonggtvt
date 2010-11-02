@@ -38,7 +38,7 @@ $tNGs->addTransaction($ins_khoa);
 // Register triggers
 $ins_khoa->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_khoa->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_khoa->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_khoa->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_khoa");
 $ins_khoa->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $ins_khoa->setTable("khoa");
@@ -51,7 +51,7 @@ $tNGs->addTransaction($upd_khoa);
 // Register triggers
 $upd_khoa->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_khoa->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_khoa->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_khoa->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_khoa");
 $upd_khoa->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $upd_khoa->setTable("khoa");
@@ -63,7 +63,7 @@ $del_khoa = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_khoa);
 // Register triggers
 $del_khoa->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_khoa->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_khoa->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_khoa");
 // Add columns
 $del_khoa->setTable("khoa");
 $del_khoa->setPrimaryKey("MaKhoa", "NUMERIC_TYPE", "GET", "MaKhoa");
@@ -97,7 +97,7 @@ $NXT_FORM_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -159,6 +159,8 @@ if (@$totalRows_rskhoa > 1) {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
-</body>
+
+<?php
+	echo $tNGs->getErrorMsg();
+?></body>
 </html>

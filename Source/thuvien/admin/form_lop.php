@@ -74,7 +74,7 @@ $tNGs->addTransaction($ins_lop);
 // Register triggers
 $ins_lop->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_lop->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_lop->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_lop->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_lop");
 $ins_lop->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $ins_lop->setTable("lop");
@@ -88,7 +88,7 @@ $tNGs->addTransaction($upd_lop);
 // Register triggers
 $upd_lop->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_lop->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_lop->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_lop->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_lop");
 $upd_lop->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $upd_lop->setTable("lop");
@@ -101,7 +101,7 @@ $del_lop = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_lop);
 // Register triggers
 $del_lop->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_lop->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_lop->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_lop");
 // Add columns
 $del_lop->setTable("lop");
 $del_lop->setPrimaryKey("MaLop", "NUMERIC_TYPE", "GET", "MaLop");
@@ -138,7 +138,7 @@ $NXT_FORM_SETTINGS = {
 <?php
 	echo $tNGs->getErrorMsg();
 ?>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -219,7 +219,7 @@ do {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
 <?php

@@ -128,7 +128,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listvitri1">
+<div class="KT_tng" id="listvitri1" align="center">
   <h1> Vị Trí
     <?php
   $nav_listvitri1->Prepare();
@@ -241,7 +241,7 @@ $NXT_LIST_SETTINGS = {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
 <?php

@@ -38,7 +38,7 @@ $tNGs->addTransaction($ins_ngonngusach);
 // Register triggers
 $ins_ngonngusach->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_ngonngusach->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_ngonngusach->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_ngonngusach->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_ngonngusach");
 $ins_ngonngusach->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $ins_ngonngusach->setTable("ngonngusach");
@@ -51,7 +51,7 @@ $tNGs->addTransaction($upd_ngonngusach);
 // Register triggers
 $upd_ngonngusach->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_ngonngusach->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_ngonngusach->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_ngonngusach->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_ngonngusach");
 $upd_ngonngusach->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $upd_ngonngusach->setTable("ngonngusach");
@@ -63,7 +63,7 @@ $del_ngonngusach = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_ngonngusach);
 // Register triggers
 $del_ngonngusach->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_ngonngusach->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_ngonngusach->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_ngonngusach");
 // Add columns
 $del_ngonngusach->setTable("ngonngusach");
 $del_ngonngusach->setPrimaryKey("MaNgonNguSach", "NUMERIC_TYPE", "GET", "MaNgonNguSach");
@@ -100,7 +100,7 @@ $NXT_FORM_SETTINGS = {
 <?php
 	echo $tNGs->getErrorMsg();
 ?>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -162,6 +162,6 @@ if (@$totalRows_rsngonngusach > 1) {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>

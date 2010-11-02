@@ -38,7 +38,7 @@ $tNGs->addTransaction($ins_linhvuc);
 // Register triggers
 $ins_linhvuc->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_linhvuc->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_linhvuc->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_linhvuc->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_linhvuc");
 $ins_linhvuc->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $ins_linhvuc->setTable("linhvuc");
@@ -53,7 +53,7 @@ $tNGs->addTransaction($upd_linhvuc);
 // Register triggers
 $upd_linhvuc->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_linhvuc->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_linhvuc->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_linhvuc->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_linhvuc");
 $upd_linhvuc->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $upd_linhvuc->setTable("linhvuc");
@@ -67,7 +67,7 @@ $del_linhvuc = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_linhvuc);
 // Register triggers
 $del_linhvuc->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_linhvuc->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_linhvuc->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_linhvuc");
 // Add columns
 $del_linhvuc->setTable("linhvuc");
 $del_linhvuc->setPrimaryKey("MaLinhVuc", "NUMERIC_TYPE", "GET", "MaLinhVuc");
@@ -101,7 +101,7 @@ $NXT_FORM_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -173,6 +173,8 @@ if (@$totalRows_rslinhvuc > 1) {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
-</body>
+
+<?php
+	echo $tNGs->getErrorMsg();
+?></body>
 </html>

@@ -44,7 +44,6 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
 $tfi_listsach1 = new TFI_TableFilter($conn_conn_project, "tfi_listsach1");
 $tfi_listsach1->addColumn("sach.MasSach", "NUMERIC_TYPE", "MasSach", "=");
 $tfi_listsach1->addColumn("sach.TenSach", "STRING_TYPE", "TenSach", "%");
-$tfi_listsach1->addColumn("sach.GhiChu", "STRING_TYPE", "GhiChu", "%");
 $tfi_listsach1->addColumn("linhvuc.MaLinhVuc", "NUMERIC_TYPE", "MaLinhVuc", "=");
 $tfi_listsach1->addColumn("nhomsach.MaNhomSach", "NUMERIC_TYPE", "MaNhom", "=");
 $tfi_listsach1->addColumn("nhaxuatban.MaNhaXuatBan", "NUMERIC_TYPE", "MaNhaXuatBan", "=");
@@ -58,7 +57,6 @@ $tfi_listsach1->Execute();
 $tso_listsach1 = new TSO_TableSorter("rssach1", "tso_listsach1");
 $tso_listsach1->addColumn("sach.MasSach");
 $tso_listsach1->addColumn("sach.TenSach");
-$tso_listsach1->addColumn("sach.GhiChu");
 $tso_listsach1->addColumn("linhvuc.TenLinhVuc");
 $tso_listsach1->addColumn("nhomsach.TenNhomSach");
 $tso_listsach1->addColumn("nhaxuatban.TenNhaXuatBan");
@@ -145,23 +143,21 @@ $NXT_LIST_SETTINGS = {
 }
 </script><style type="text/css">
   /* Dynamic List row settings */
-  .KT_col_MasSach {width:40px; overflow:hidden;}
-  .KT_col_TenSach {width:120px; overflow:hidden;}
-  .KT_col_GhiChu {width:140px; overflow:hidden;}
+  .KT_col_MasSach {width:80px; overflow:hidden;}
+  .KT_col_TenSach {width:200px; overflow:hidden;}
   .KT_col_MaLinhVuc {width:80px; overflow:hidden;}
-  .KT_col_MaNhom {width:100px; overflow:hidden;}
-  .KT_col_MaNhaXuatBan {width:140px; overflow:hidden;}
-  .KT_col_NgayCapNhat {width:120px; overflow:hidden;}
-  .KT_col_MaTacGia {width:120px; overflow:hidden;}
-  .KT_col_Visible {width:40px; overflow:hidden;}
-  .KT_col_SoLanMuon {width:40px; overflow:hidden;}
+  .KT_col_MaNhom {width:170px; overflow:hidden;}
+  .KT_col_MaNhaXuatBan {width:160px; overflow:hidden;}
+  .KT_col_NgayCapNhat {width:140px; overflow:hidden;}
+  .KT_col_MaTacGia {width:160px; overflow:hidden;}
+  .KT_col_Visible {width:140px; overflow:hidden;}
+  .KT_col_SoLanMuon {width:80px; overflow:hidden;}
 </style>
-
 </head>
 
 <body>
-<div class="KT_tng" id="listsach1">
-  <h1> Sach
+<div class="KT_tng" id="listsach1" align="center">
+  <h1>Bảng sách
     <?php
   $nav_listsach1->Prepare();
   require("../includes/nav/NAV_Text_Statistics.inc.php");
@@ -204,11 +200,10 @@ $NXT_LIST_SETTINGS = {
             </th>
             <th id="MasSach" class="KT_sorter KT_col_MasSach <?php echo $tso_listsach1->getSortIcon('sach.MasSach'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('sach.MasSach'); ?>">Mã Sách</a> </th>
             <th id="TenSach" class="KT_sorter KT_col_TenSach <?php echo $tso_listsach1->getSortIcon('sach.TenSach'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('sach.TenSach'); ?>">Tên sách</a> </th>
-            <th id="GhiChu" class="KT_sorter KT_col_GhiChu <?php echo $tso_listsach1->getSortIcon('sach.GhiChu'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('sach.GhiChu'); ?>">Ghi Chú</a> </th>
             <th id="MaLinhVuc" class="KT_sorter KT_col_MaLinhVuc <?php echo $tso_listsach1->getSortIcon('linhvuc.TenLinhVuc'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('linhvuc.TenLinhVuc'); ?>">Lĩnh Vực</a> </th>
             <th id="MaNhom" class="KT_sorter KT_col_MaNhom <?php echo $tso_listsach1->getSortIcon('nhomsach.TenNhomSach'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('nhomsach.TenNhomSach'); ?>">Nhóm sách</a> </th>
             <th id="MaNhaXuatBan" class="KT_sorter KT_col_MaNhaXuatBan <?php echo $tso_listsach1->getSortIcon('nhaxuatban.TenNhaXuatBan'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('nhaxuatban.TenNhaXuatBan'); ?>">Nhà Xuất Bản</a> </th>
-            <th id="NgayCapNhat" class="KT_sorter KT_col_NgayCapNhat <?php echo $tso_listsach1->getSortIcon('sach.NgayCapNhat'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('sach.NgayCapNhat'); ?>">NgayCapNhat</a> </th>
+            <th id="NgayCapNhat" class="KT_sorter KT_col_NgayCapNhat <?php echo $tso_listsach1->getSortIcon('sach.NgayCapNhat'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('sach.NgayCapNhat'); ?>">Ngày cập nhật</a> </th>
             <th id="MaTacGia" class="KT_sorter KT_col_MaTacGia <?php echo $tso_listsach1->getSortIcon('tacgia.TenTacGia'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('tacgia.TenTacGia'); ?>">Tác Giả</a> </th>
             <th id="Visible" class="KT_sorter KT_col_Visible <?php echo $tso_listsach1->getSortIcon('sach.Visible'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('sach.Visible'); ?>">Visible</a> </th>
             <th id="SoLanMuon" class="KT_sorter KT_col_SoLanMuon <?php echo $tso_listsach1->getSortIcon('sach.SoLanMuon'); ?>"> <a href="<?php echo $tso_listsach1->getSortLink('sach.SoLanMuon'); ?>">Số lần mượn</a> </th>
@@ -222,7 +217,6 @@ $NXT_LIST_SETTINGS = {
             <td>&nbsp;</td>
             <td><input type="text" name="tfi_listsach1_MasSach" id="tfi_listsach1_MasSach" value="<?php echo KT_escapeAttribute(@$_SESSION['tfi_listsach1_MasSach']); ?>" size="20" maxlength="100" /></td>
             <td><input type="text" name="tfi_listsach1_TenSach" id="tfi_listsach1_TenSach" value="<?php echo KT_escapeAttribute(@$_SESSION['tfi_listsach1_TenSach']); ?>" size="20" maxlength="45" /></td>
-            <td><input type="text" name="tfi_listsach1_GhiChu" id="tfi_listsach1_GhiChu" value="<?php echo KT_escapeAttribute(@$_SESSION['tfi_listsach1_GhiChu']); ?>" size="20" maxlength="100" /></td>
             <td><select name="tfi_listsach1_MaLinhVuc" id="tfi_listsach1_MaLinhVuc">
               <option value="" <?php if (!(strcmp("", @$_SESSION['tfi_listsach1_MaLinhVuc']))) {echo "SELECTED";} ?>><?php echo NXT_getResource("None"); ?></option>
               <?php
@@ -299,7 +293,7 @@ do {
         <tbody>
           <?php if ($totalRows_rssach1 == 0) { // Show if recordset empty ?>
           <tr>
-            <td colspan="12"><?php echo NXT_getResource("The table is empty or the filter you've selected is too restrictive."); ?></td>
+            <td colspan="11"><?php echo NXT_getResource("The table is empty or the filter you've selected is too restrictive."); ?></td>
           </tr>
           <?php } // Show if recordset empty ?>
           <?php if ($totalRows_rssach1 > 0) { // Show if recordset not empty ?>
@@ -310,12 +304,11 @@ do {
             </td>
             <td><div class="KT_col_MasSach"><?php echo KT_FormatForList($row_rssach1['MasSach'], 20); ?></div></td>
             <td><div class="KT_col_TenSach"><?php echo KT_FormatForList($row_rssach1['TenSach'], 200); ?></div></td>
-            <td><div class="KT_col_GhiChu"><?php echo KT_FormatForList($row_rssach1['GhiChu'], 200); ?></div></td>
-            <td><div class="KT_col_MaLinhVuc"><?php echo KT_FormatForList($row_rssach1['MaLinhVuc'], 20); ?></div></td>
-            <td><div class="KT_col_MaNhom"><?php echo KT_FormatForList($row_rssach1['MaNhom'], 20); ?></div></td>
-            <td><div class="KT_col_MaNhaXuatBan"><?php echo KT_FormatForList($row_rssach1['MaNhaXuatBan'], 20); ?></div></td>
-            <td><?php echo $row_rssach1['NgayCapNhat']; ?></td>
-            <td><div class="KT_col_MaTacGia"><?php echo KT_FormatForList($row_rssach1['MaTacGia'], 20); ?></div></td>
+            <td><div class="KT_col_MaLinhVuc"><?php echo KT_FormatForList($row_rssach1['MaLinhVuc'], 200); ?></div></td>
+            <td><div class="KT_col_MaNhom"><?php echo KT_FormatForList($row_rssach1['MaNhom'], 200); ?></div></td>
+            <td><div class="KT_col_MaNhaXuatBan"><?php echo KT_FormatForList($row_rssach1['MaNhaXuatBan'], 200); ?></div></td>
+            <td><?php echo date('d/m/Y',strtotime($row_rssach1['NgayCapNhat'])); ?></td>
+            <td><div class="KT_col_MaTacGia"><?php echo KT_FormatForList($row_rssach1['MaTacGia'], 200); ?></div></td>
             <td><div align="center">
               <?php 
 // Show IF Conditional region4 
@@ -360,7 +353,7 @@ if (@$row_rssach1['Visible'] == 1) {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 
 </body>
 </html>

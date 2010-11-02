@@ -132,7 +132,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listnhomsach2">
+<div class="KT_tng" id="listnhomsach2" align="center">
   <h1> Nhóm sách
     <?php
   $nav_listnhomsach2->Prepare();
@@ -242,8 +242,8 @@ do {
             </td>
             <td><div class="KT_col_MaNhomSach"><?php echo KT_FormatForList($row_rsnhomsach1['MaNhomSach'], 20); ?></div></td>
             <td><div class="KT_col_TenNhomSach"><?php echo KT_FormatForList($row_rsnhomsach1['TenNhomSach'], 400); ?></div></td>
-            <td><div class="KT_col_MaLinhVuc"><?php echo KT_FormatForList($row_rsnhomsach1['MaLinhVuc'], 20); ?></div></td>
-            <td><div class="KT_col_MaViTri"><?php echo KT_FormatForList($row_rsnhomsach1['MaViTri'], 20); ?></div></td>
+            <td><div class="KT_col_MaLinhVuc"><?php echo KT_FormatForList($row_rsnhomsach1['MaLinhVuc'], 200); ?></div></td>
+            <td><div class="KT_col_MaViTri"><?php echo KT_FormatForList($row_rsnhomsach1['MaViTri'], 200); ?></div></td>
             <td><div align="center">
               <?php 
 // Show IF Conditional region5 
@@ -257,7 +257,7 @@ if (@$row_rsnhomsach1['HienMenu1'] == 1) {
                 <?php } 
 // endif Conditional region5
 ?></div></td>
-            <td><a class="KT_edit_link" href="admincp_form.php?mod=form_nhomsach&amp;MaNhomSach=<?php echo $row_rsnhomsach1['MaNhomSach']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
+            <td><a class="KT_edit_link" href="admincp1.php?mod=form_nhomsach&amp;MaNhomSach=<?php echo $row_rsnhomsach1['MaNhomSach']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a> </td>
           </tr>
           <?php } while ($row_rsnhomsach1 = mysql_fetch_assoc($rsnhomsach1)); ?>
           <?php } // Show if recordset not empty ?>
@@ -282,12 +282,11 @@ if (@$row_rsnhomsach1['HienMenu1'] == 1) {
           <option value="5">5</option>
           <option value="6">6</option>
         </select>
-        <a class="KT_additem_op_link" href="admincp_form.php?mod=form_nhomsach&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
+        <a class="KT_additem_op_link" href="admincp1.php?mod=form_nhomsach&amp;KT_back=1" onclick="return nxt_list_additem(this)"><?php echo NXT_getResource("add new"); ?></a> </div>
     </form>
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
 
 </body>
 </html>

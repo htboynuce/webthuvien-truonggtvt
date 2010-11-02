@@ -119,7 +119,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listtacgia1">
+<div class="KT_tng" id="listtacgia1" align="center">
   <h1> Tác Giả
     <?php
   $nav_listtacgia1->Prepare();
@@ -223,7 +223,7 @@ $NXT_LIST_SETTINGS = {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 </body>
 </html>
 <?php

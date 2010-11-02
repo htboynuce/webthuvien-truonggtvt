@@ -81,7 +81,7 @@ $tNGs->addTransaction($ins_nhomsach);
 // Register triggers
 $ins_nhomsach->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_nhomsach->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_nhomsach->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_nhomsach->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_nhomsach");
 $ins_nhomsach->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $ins_nhomsach->setTable("nhomsach");
@@ -97,7 +97,7 @@ $tNGs->addTransaction($upd_nhomsach);
 // Register triggers
 $upd_nhomsach->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_nhomsach->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_nhomsach->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_nhomsach->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_nhomsach");
 $upd_nhomsach->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 // Add columns
 $upd_nhomsach->setTable("nhomsach");
@@ -112,7 +112,7 @@ $del_nhomsach = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_nhomsach);
 // Register triggers
 $del_nhomsach->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_nhomsach->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_nhomsach->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_nhomsach");
 // Add columns
 $del_nhomsach->setTable("nhomsach");
 $del_nhomsach->setPrimaryKey("MaNhomSach", "NUMERIC_TYPE", "GET", "MaNhomSach");
@@ -146,7 +146,7 @@ $NXT_FORM_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -253,7 +253,10 @@ do {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
+<?php
+	echo $tNGs->getErrorMsg();
+?>
 </body>
 </html>
 <?php

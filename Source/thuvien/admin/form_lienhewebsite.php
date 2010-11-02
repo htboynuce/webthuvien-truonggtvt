@@ -49,7 +49,7 @@ $tNGs->addTransaction($ins_lienhewebsite);
 // Register triggers
 $ins_lienhewebsite->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_lienhewebsite->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_lienhewebsite->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_lienhewebsite->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_lienhewebsite");
 $ins_lienhewebsite->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 $ins_lienhewebsite->registerTrigger("BEFORE", "Trigger_CheckUnique1", 30);
 // Add columns
@@ -66,7 +66,7 @@ $tNGs->addTransaction($upd_lienhewebsite);
 // Register triggers
 $upd_lienhewebsite->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_lienhewebsite->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_lienhewebsite->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_lienhewebsite->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_lienhewebsite");
 $upd_lienhewebsite->registerTrigger("BEFORE", "Trigger_CheckUnique", 30);
 $upd_lienhewebsite->registerTrigger("BEFORE", "Trigger_CheckUnique1", 30);
 // Add columns
@@ -82,7 +82,7 @@ $del_lienhewebsite = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_lienhewebsite);
 // Register triggers
 $del_lienhewebsite->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_lienhewebsite->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_lienhewebsite->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_lienhewebsite");
 // Add columns
 $del_lienhewebsite->setTable("lienhewebsite");
 $del_lienhewebsite->setPrimaryKey("MaLienhe", "NUMERIC_TYPE", "GET", "MaLienhe");
@@ -116,7 +116,7 @@ $NXT_FORM_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -196,6 +196,8 @@ if (@$totalRows_rslienhewebsite > 1) {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
-</body>
+
+<?php
+	echo $tNGs->getErrorMsg();
+?></body>
 </html>

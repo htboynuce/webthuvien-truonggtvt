@@ -117,7 +117,7 @@ $NXT_LIST_SETTINGS = {
 }
 </script><style type="text/css">
   /* Dynamic List row settings */
-  .KT_col_MaPhieuMuon {width:140px; overflow:hidden;}
+  .KT_col_MaPhieuMuon {width:100px; overflow:hidden;}
   .KT_col_TenPhieuMuon {width:140px; overflow:hidden;}
   .KT_col_MaThanhVien {width:140px; overflow:hidden;}
   .KT_col_NgayHetHanThe {width:140px; overflow:hidden;}
@@ -127,7 +127,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listphieumuon1">
+<div class="KT_tng" id="listphieumuon1" align="center">
   <h1> Phiếu Mượn
     <?php
   $nav_listphieumuon1->Prepare();
@@ -221,10 +221,10 @@ do {
                 <input type="hidden" name="MaPhieuMuon" class="id_field" value="<?php echo $row_rsphieumuon1['MaPhieuMuon']; ?>" />
             </td>
             <td><div class="KT_col_MaPhieuMuon"><?php echo KT_FormatForList($row_rsphieumuon1['MaPhieuMuon'], 20); ?></div></td>
-            <td><div class="KT_col_TenPhieuMuon"><?php echo KT_FormatForList($row_rsphieumuon1['TenPhieuMuon'], 20); ?></div></td>
-            <td><div class="KT_col_MaThanhVien"><?php echo KT_FormatForList($row_rsphieumuon1['MaThanhVien'], 20); ?></div></td>
-            <td><div class="KT_col_NgayHetHanThe"><?php echo KT_FormatForList($row_rsphieumuon1['NgayHetHanThe'], 20); ?></div></td>
-            <td><div class="KT_col_NgayLapThe"><?php echo KT_formatDate($row_rsphieumuon1['NgayLapThe']); ?></div></td>
+            <td><div class="KT_col_TenPhieuMuon"><?php echo KT_FormatForList($row_rsphieumuon1['TenPhieuMuon'], 200); ?></div></td>
+            <td><div class="KT_col_MaThanhVien"><?php echo KT_FormatForList($row_rsphieumuon1['MaThanhVien'], 200); ?></div></td>
+            <td><?php echo date('d/m/Y',strtotime($row_rsphieumuon1['NgayHetHanThe'])); ?></td>
+            <td><div class="KT_col_NgayLapThe"><?php echo date('d/m/Y',strtotime($row_rsphieumuon1['NgayLapThe'])); ?></div></td>
             <td><a class="KT_edit_link" href="admincp_form.php?mod=form_phieumuon&amp;MaPhieuMuon=<?php echo $row_rsphieumuon1['MaPhieuMuon']; ?>&amp;KT_back=1"><?php echo NXT_getResource("edit_one"); ?></a> <a class="KT_delete_link" href="#delete"><?php echo NXT_getResource("delete_one"); ?></a><a class="KT_link" href="admincp_thuthu.php?mod=list_chitietphieumuon&amp;NxT_MaPhieuMuon=<?php echo $row_rsphieumuon1['MaPhieuMuon']; ?>&amp;KT_back=1">Chi tiết phiếu mượn</a> </td>
           </tr>
           <?php } while ($row_rsphieumuon1 = mysql_fetch_assoc($rsphieumuon1)); ?>
@@ -255,7 +255,7 @@ do {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 
 </body>
 </html>

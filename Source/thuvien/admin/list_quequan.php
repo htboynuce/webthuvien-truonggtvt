@@ -119,7 +119,7 @@ $NXT_LIST_SETTINGS = {
 </head>
 
 <body>
-<div class="KT_tng" id="listquequan1">
+<div class="KT_tng" id="listquequan1" align="center">
   <h1> Quê Quán
     <?php
   $nav_listquequan1->Prepare();

@@ -104,7 +104,7 @@ $tNGs->addTransaction($ins_thanhvien);
 // Register triggers
 $ins_thanhvien->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Insert1");
 $ins_thanhvien->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$ins_thanhvien->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$ins_thanhvien->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_thanhvien");
 $ins_thanhvien->registerConditionalTrigger("{POST.Pass} != {POST.re_Pass}", "BEFORE", "Trigger_CheckPasswords", 50);
 // Add columns
 $ins_thanhvien->setTable("thanhvien");
@@ -128,7 +128,7 @@ $tNGs->addTransaction($upd_thanhvien);
 // Register triggers
 $upd_thanhvien->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Update1");
 $upd_thanhvien->registerTrigger("BEFORE", "Trigger_Default_FormValidation", 10, $formValidation);
-$upd_thanhvien->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$upd_thanhvien->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_thanhvien");
 $upd_thanhvien->registerConditionalTrigger("{POST.Pass} != {POST.re_Pass}", "BEFORE", "Trigger_CheckPasswords", 50);
 $upd_thanhvien->registerTrigger("BEFORE", "Trigger_CheckOldPassword", 60);
 // Add columns
@@ -152,7 +152,7 @@ $del_thanhvien = new tNG_multipleDelete($conn_conn_project);
 $tNGs->addTransaction($del_thanhvien);
 // Register triggers
 $del_thanhvien->registerTrigger("STARTER", "Trigger_Default_Starter", 1, "POST", "KT_Delete1");
-$del_thanhvien->registerTrigger("END", "Trigger_Default_Redirect", 99, "../includes/nxt/back.php");
+$del_thanhvien->registerTrigger("END", "Trigger_Default_Redirect", 99, "admincp1.php?mod=list_thanhvien");
 // Add columns
 $del_thanhvien->setTable("thanhvien");
 $del_thanhvien->setPrimaryKey("MaThanhVien", "NUMERIC_TYPE", "GET", "MaThanhVien");
@@ -197,7 +197,7 @@ echo $jsObject_rs_lop->getOutput();
 <?php
 	echo $tNGs->getErrorMsg();
 ?>
-<div class="KT_tng">
+<div class="KT_tng" align="center">
   <h1>
     <?php 
 // Show IF Conditional region1 
@@ -353,7 +353,7 @@ do {
   </div>
   <br class="clearfixplain" />
 </div>
-<p>&nbsp;</p>
+
 
 </body>
 </html>
