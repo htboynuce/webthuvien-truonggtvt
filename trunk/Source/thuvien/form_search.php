@@ -1,0 +1,126 @@
+<?php require_once('Connections/conn_project.php'); ?>
+<?php
+//MX Widgets3 include
+require_once('includes/wdg/WDG.php');
+
+if (!function_exists("GetSQLValueString")) {
+function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
+{
+  $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+
+  $theValue = function_exists("mysql_real_escape_string") ? mysql_real_escape_string($theValue) : mysql_escape_string($theValue);
+
+  switch ($theType) {
+    case "text":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;    
+    case "long":
+    case "int":
+      $theValue = ($theValue != "") ? intval($theValue) : "NULL";
+      break;
+    case "double":
+      $theValue = ($theValue != "") ? "'" . doubleval($theValue) . "'" : "NULL";
+      break;
+    case "date":
+      $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
+      break;
+    case "defined":
+      $theValue = ($theValue != "") ? $theDefinedValue : $theNotDefinedValue;
+      break;
+  }
+  return $theValue;
+}
+}
+
+mysql_select_db($database_conn_project, $conn_project);
+$query_rs_linhvuc = "SELECT MaLinhVuc, TenLinhVuc FROM linhvuc WHERE HienLinhVuc = 1 ORDER BY TenLinhVuc ASC";
+$rs_linhvuc = mysql_query($query_rs_linhvuc, $conn_project) or die(mysql_error());
+$row_rs_linhvuc = mysql_fetch_assoc($rs_linhvuc);
+$totalRows_rs_linhvuc = mysql_num_rows($rs_linhvuc);
+
+mysql_select_db($database_conn_project, $conn_project);
+$query_rs_nhomsach = "SELECT MaNhomSach, TenNhomSach, MaLinhVuc FROM nhomsach WHERE HienMenu1=1 ORDER BY TenNhomSach ASC";
+$rs_nhomsach = mysql_query($query_rs_nhomsach, $conn_project) or die(mysql_error());
+$row_rs_nhomsach = mysql_fetch_assoc($rs_nhomsach);
+$totalRows_rs_nhomsach = mysql_num_rows($rs_nhomsach);
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wdg="http://ns.adobe.com/addt">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script type="text/javascript" src="includes/common/js/sigslot_core.js"></script>
+<script src="includes/common/js/base.js" type="text/javascript"></script>
+<script src="includes/common/js/utility.js" type="text/javascript"></script>
+<script type="text/javascript" src="includes/wdg/classes/MXWidgets.js"></script>
+<script type="text/javascript" src="includes/wdg/classes/MXWidgets.js.php"></script>
+<script type="text/javascript" src="includes/wdg/classes/JSRecordset.js"></script>
+<script type="text/javascript" src="includes/wdg/classes/DependentDropdown.js"></script>
+<?php
+//begin JSRecordset
+$jsObject_rs_nhomsach = new WDG_JsRecordset("rs_nhomsach");
+echo $jsObject_rs_nhomsach->getOutput();
+//end JSRecordset
+?>
+<link href="includes/skins/mxkollection3.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/theme1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+<!--
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('Xin vui lòng nhập từ khóa cần tìm');
+    document.MM_returnValue = (errors == '');
+} }
+//-->
+</script>
+</head>
+
+<body>
+<div id="formsearch">
+<div id="formsearch_top">TÌM KIẾM</div>
+<form id="timkiem" name="timkiem" method="get" action="index.php">
+ <input name="mod" type="hidden" id="mod" value="search" />
+ <div id="formsearch_cen">
+   <input name="key1" type="text" id="key1" size="26" onfocus="if(this.value=='Nhập vào từ cần tìm') this.value='';" onblur="if(this.value=='') this.value='Nhập vào từ cần tìm';" value="Nhập vào từ cần tìm"/>
+   <br />
+   <select name="key2" id="key2" style="width:180px;">
+     <?php
+do {  
+?>
+     <option value="<?php echo $row_rs_linhvuc['MaLinhVuc']?>"><?php echo $row_rs_linhvuc['TenLinhVuc']?></option>
+     <?php
+} while ($row_rs_linhvuc = mysql_fetch_assoc($rs_linhvuc));
+  $rows = mysql_num_rows($rs_linhvuc);
+  if($rows > 0) {
+      mysql_data_seek($rs_linhvuc, 0);
+	  $row_rs_linhvuc = mysql_fetch_assoc($rs_linhvuc);
+  }
+?>
+   </select>
+   <br />
+  <select name="key3" id="key3" style="width:180px" wdg:subtype="DependentDropdown" wdg:type="widget" wdg:recordset="rs_nhomsach" wdg:displayfield="TenNhomSach" wdg:valuefield="MaNhomSach" wdg:fkey="MaLinhVuc" wdg:triggerobject="key2">
+  <option selected="selected" value="All"> Tất cả</option>
+  </select>
+  <br />
+  <br />
+  <input type="submit" onclick="MM_validateForm('key1','','R');return document.MM_returnValue" value="Tìm kiếm" align="middle" />
+  </div>
+</form>
+</div>
+</body>
+</html>
+<?php
+mysql_free_result($rs_linhvuc);
+
+mysql_free_result($rs_nhomsach);
+?>
