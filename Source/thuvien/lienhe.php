@@ -15,8 +15,10 @@
     <td><p align="justify"><strong>Vui lòng liên hệ với chúng tôi :</strong></p>
       <p align="justify"> Email :phuongnho.thanh@gmail.com
         <br />              
-        &nbsp;&nbsp;&nbsp;&nbsp;tanduc@gmail.com<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thu@gmail.com</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;ngocyen.bt89@gmail.com<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;purewaterx@gmail.com, <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ruoubauda.cn@gmail.com, <br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;java.tuonglai88@gmail.com</p>
       <p align="justify">Điện thoại : 01682019856 - 097856123 - 0987120345</p>
       </td>
   </tr>
