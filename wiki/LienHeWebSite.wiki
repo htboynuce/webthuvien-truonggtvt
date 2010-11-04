@@ -1,0 +1,1 @@
+Liên hệ web site : Là phần mở rộng, từ trang web của mình bạn có thể liên kết đến các trang web khác bằng cách chọn vào trang bạn cần xem trong list mà không cần phải biết địa chỉ của trang web đó !
