@@ -138,11 +138,7 @@ P7_opTTM('id:p7Tooltip_<?php echo $j ?>','att:title','p7TTM01',8,300,5,1,1,0,0,0
 <body>
 <?php 
 // Show IF Conditional region2 
-if (@$_GET['key3'] != "All") {
-?>
-    <?php 
-// Show IF Conditional region3 
-if (@$_GET['key1'] != "Nhập vào từ cần tìm") {
+if ((@$_GET['key3'] != "All") && (@$_GET['key1'] != "Nhập vào từ cần tìm")) {
 ?>
       <div id="ketquatimkiem1khoa">
         <?php if ($totalRows_rs_ketquatimkiem3khoa > 0) { // Show if recordset not empty ?>
@@ -165,9 +161,9 @@ if (@$row_rs_ketquatimkiem3khoa['cosachmoi'] == 1) {
 // endif Conditional region1
 ?>
                       <br/>
-                      <a href="#" title="<?php echo $row_rs_ketquatimkiem3khoa['GhiChu']; ?>" class="p7TTM_trg" id="p7Tooltip_<?php echo $i ?>"><?php echo $row_rs_ketquatimkiem3khoa['TenTacGia']; ?></a><br/>
+                    <?php echo $row_rs_ketquatimkiem3khoa['TenTacGia']; ?><br/>
                       <br/>
-                    <a href="index.php?mod=chitiet_sach&amp;cat=<?php echo $row_rs_sach['MaLinhVuc']; ?>&amp;masach=<?php echo $row_rs_sach['MasSach']; ?>"><img src="images/xemchitiet.jpg" border="0" /></a> </div>
+                    <a href="index.php?mod=chitiet_sach&amp;cat=<?php echo $row_rs_ketquatimkiem3khoa['MaLinhVuc']; ?>&amp;masach=<?php echo $row_rs_ketquatimkiem3khoa['MasSach']; ?>&amp;subcat=<?php echo $row_rs_ketquatimkiem3khoa['MaNhomSach']; ?>"><img src="images/xemchitiet.jpg" border="0" /></a> </div>
                 </div>
                 <?php
 $row_rs_ketquatimkiem3khoa = mysql_fetch_assoc($rs_ketquatimkiem3khoa);
@@ -216,9 +212,6 @@ if ($TFM_Next - 1 < $totalPages_rs_ketquatimkiem3khoa) {
 ?>
         </div>
       </div>
-      <?php } 
-// endif Conditional region3
-?>
     <?php } 
 // endif Conditional region2
 ?></body>
