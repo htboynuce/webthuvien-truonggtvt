@@ -28,6 +28,11 @@ require_once ('includes/mxi/MXI.php');
   require(basename("ketquatimkiem3khoa.php"));
   mxi_includes_end();
 ?>
+<?php
+  mxi_includes_start("ketquatimkiem3khoa_moi.php");
+  require(basename("ketquatimkiem3khoa_moi.php"));
+  mxi_includes_end();
+?>
 </div>
 </div>
 </body>
