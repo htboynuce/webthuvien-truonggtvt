@@ -1,7 +1,0 @@
-C:\Users\THANH XUAN\Documents\Visual Studio 2008\Projects\Webtest_ThuVien\Webtest_ThuVien\bin\Debug\WebTest1.webtest
-C:\Users\THANH XUAN\Documents\Visual Studio 2008\Projects\Webtest_ThuVien\Webtest_ThuVien\bin\Debug\WebTest2.webtest
-C:\Users\THANH XUAN\Documents\Visual Studio 2008\Projects\Webtest_ThuVien\Webtest_ThuVien\bin\Debug\Webtest_ThuVien.dll
-C:\Users\THANH XUAN\Documents\Visual Studio 2008\Projects\Webtest_ThuVien\Webtest_ThuVien\bin\Debug\Webtest_ThuVien.pdb
-C:\Users\THANH XUAN\Documents\Visual Studio 2008\Projects\Webtest_ThuVien\Webtest_ThuVien\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\THANH XUAN\Documents\Visual Studio 2008\Projects\Webtest_ThuVien\Webtest_ThuVien\obj\Debug\Webtest_ThuVien.dll
-C:\Users\THANH XUAN\Documents\Visual Studio 2008\Projects\Webtest_ThuVien\Webtest_ThuVien\obj\Debug\Webtest_ThuVien.pdb
