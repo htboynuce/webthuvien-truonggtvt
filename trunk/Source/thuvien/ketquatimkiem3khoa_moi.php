@@ -132,6 +132,7 @@ if (@$row_ketquatimkiem3khoa_moi['cosachmoi'] == 1) {
         </div>
       </div>
       <div class="clear"></div>
+      
       <div id="ketquatimkiem1khoa_phantrang">
         <?php
 $TFM_Previous = $pageNum_ketquatimkiem3khoa_moi - 3;
@@ -162,11 +163,10 @@ if ($TFM_Next - 1 < $totalPages_ketquatimkiem3khoa_moi) {
 ?>
       </div>
       <?php } // Show if recordset not empty ?>
-    <div id="ketquatimkiem1khoa_error">
       <?php if ($totalRows_ketquatimkiem3khoa_moi == 0) { // Show if recordset empty ?>
-        Không tìm thấy kết quả tìm kiếm nào ! Hãy thử tìm kiếm lại !
+    <div id="ketquatimkiem1khoa_error">
+        Không tìm thấy kết quả tìm kiếm nào ! Hãy thử tìm kiếm lại !</div>
         <?php } // Show if recordset empty ?>
-    </div>
   </div>
   <?php } 
 // endif Conditional region2

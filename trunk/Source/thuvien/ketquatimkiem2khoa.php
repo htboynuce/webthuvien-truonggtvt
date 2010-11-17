@@ -143,7 +143,7 @@ do { // horizontal looper version 3
        $i++;
 ?>
                 <div id="ketquatimkiem1khoa_cen_cen2">
-                  <div align="center"> <a href="index.php?mod=chitiet_sach&amp;cat=<?php echo $row_rs_sach['MaLinhVuc']; ?>&amp;masach=<?php echo $row_rs_sach['MasSach']; ?>"><?php echo $row_rs_ketquatimkiem2khoa['TenSach']; ?></a>
+                  <div align="center"> <a href="index.php?mod=chitiet_sach&amp;cat=<?php echo $row_rs_ketquatimkiem2khoa['MaLinhVuc']; ?>&amp;masach=<?php echo $row_rs_ketquatimkiem2khoa['MasSach']; ?>&amp;subcat=<?php echo $row_rs_ketquatimkiem2khoa['MaNhomSach']; ?>"><?php echo $row_rs_ketquatimkiem2khoa['TenSach']; ?></a>
                       <?php 
 // Show IF Conditional region1 
 if (@$row_rs_ketquatimkiem2khoa['cosachmoi'] == 1) {
@@ -153,10 +153,10 @@ if (@$row_rs_ketquatimkiem2khoa['cosachmoi'] == 1) {
 // endif Conditional region1
 ?>
                       <br/>
-                    <?php echo $row_rs_ketquatimkiem2khoa['TenTacGia']; ?><br/>
+                  <?php echo $row_rs_ketquatimkiem2khoa['TenTacGia']; ?><br/>
                       <br/>
                     <a href="index.php?mod=chitiet_sach&amp;cat=<?php echo $row_rs_ketquatimkiem2khoa['MaLinhVuc']; ?>&amp;masach=<?php echo $row_rs_ketquatimkiem2khoa['MasSach']; ?>&amp;subcat=<?php echo $row_rs_ketquatimkiem2khoa['MaNhomSach']; ?>"><img src="images/xemchitiet.jpg" border="0" /></a> </div>
-                </div>
+              </div>
                 <?php
 $row_rs_ketquatimkiem2khoa = mysql_fetch_assoc($rs_ketquatimkiem2khoa);
     if (!isset($nested_rs_ketquatimkiem2khoa)) {
