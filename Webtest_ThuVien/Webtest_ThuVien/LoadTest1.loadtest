@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LoadTest Name="LoadTest1" Description="" Owner="" storage="c:\users\thanh xuan\documents\visual studio 2008\projects\webtest_thuvien\webtest_thuvien\loadtest1.loadtest" Priority="0" Enabled="true" CssProjectStructure="" CssIteration="" DeploymentItemsEditable="" WorkItemIds="" TraceLevel="None" CurrentRunConfig="Run Settings1" LoadTestPluginClass="" Id="4d5ee5a5-55ac-4a3f-9d23-45a52274180d" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+<LoadTest Name="LoadTest1" Description="" Owner="" storage="d:\hk 7\cong cu &amp; moi truong phat trien pm\webthuvien-truonggtvt\webtest_thuvien\webtest_thuvien\loadtest1.loadtest" Priority="0" Enabled="true" CssProjectStructure="" CssIteration="" DeploymentItemsEditable="" WorkItemIds="" TraceLevel="None" CurrentRunConfig="Run Settings1" LoadTestPluginClass="" Id="4d5ee5a5-55ac-4a3f-9d23-45a52274180d" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
   <Scenarios>
     <Scenario Name="Loadtest_ThuVien" DelayBetweenIterations="0" PercentNewUsers="0" IPSwitching="true" TestMixType="PercentageOfTestsStarted">
       <ThinkProfile Value="0" Pattern="Off" />
